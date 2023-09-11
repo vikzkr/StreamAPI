@@ -18,22 +18,24 @@ public class Joinng {
 		String data = people.stream().filter((person) -> person.getAge() > 20).map(Person::getName)
 				.map(String::toUpperCase).collect(Collectors.joining(","));
 		System.out.println(data);
-		System.out.println("------------");
+		System.out.println("------1------");
 		System.out.println(
-				people.stream().collect(Collectors.groupingBy((person) -> person.getAge(), Collectors.counting())));
-		System.out.println("------------");
-		System.out.println(
-				people.stream().collect(Collectors.groupingBy((person) -> person.getName(), Collectors.toList())));
-		System.out.println("------------");
-		System.out.println(people.stream().collect(Collectors.partitioningBy((person) -> person.getAge() > 25)));
-		System.out.println("------------");
+				people.stream().collect
+				(Collectors.groupingBy((person) -> person.getAge())));
+		System.out.println("-----2------");
 		System.out.println(people.stream().collect(
 				Collectors.groupingBy(Person::getName, Collectors.mapping(Person::getAge, Collectors.toList()))));
 
-		System.out.println("-----rr-------");
+		System.out.println("------3------");
+		System.out.println(
+				people.stream().collect(Collectors.groupingBy((person) -> person.getName(), Collectors.toList())));
+		System.out.println("------4------");
+		System.out.println(people.stream().collect(Collectors.partitioningBy((person) -> person.getAge() > 25)));
+		
+		System.out.println("-----5-------");
 		System.out.println(people.stream().collect(Collectors.groupingBy(Person::getName, Collectors
 				.mapping(Person::getAge, Collectors.collectingAndThen(Collectors.counting(), Long::intValue)))));
-		System.out.println("------------");
+		System.out.println("-------6-----");
 
 		// importing
 		System.out.println(people.stream()
@@ -42,7 +44,7 @@ public class Joinng {
 		System.out.println(people.stream().collect(Collectors.minBy(Comparator.comparing(Person::getAge))));
 
 		// filtering
-		System.out.println("------------");
+		System.out.println("----7--------");
 		System.out.println(people.stream().collect(Collectors.groupingBy(Person::getName,
 				Collectors.mapping(Person::getAge, Collectors.filtering(age -> age > 50, Collectors.toList())))));
 //		Map <String , List<Person>> str = new HashMap<>();
