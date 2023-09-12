@@ -1,0 +1,26 @@
+
+//12.	Consider the table structure for storing the salary of employees. Find employees with 9th highest salary.
+SELECT DISTINCT Salary
+FROM Employee
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 8;
+
+//1 letter capital
+SELECT CONCAT(UPPER(SUBSTRING(column_name, 1, 1)), SUBSTRING(column_name, 2)) AS capitalized_column
+FROM your_table;
+
+
+coupling and cohension
+challenge in microservice
+
+
+SELECT * FROM EMPLOYEE WHERE SALARY = ( SELECT DISTINCT SALARY FROM EMPLOYEE ORDER BY SALARY DESC IT 1 OFFSET 8);
+SELECT * 
+FROM employees
+WHERE salary = (
+    SELECT DISTINCT salary
+    FROM employees
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 8
+);
+
