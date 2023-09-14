@@ -13,15 +13,15 @@ import java.util.stream.Collectors;
 public class Repeation {
     public static void main(String[] args) {
 
-//        int[] arr = {1,1,2,1,4,3,2,4,2,3,5,3,2,5,4,3};
+        int[] arr2 = {1,1,2,1,4,3,2,4,2,3,5,3,2,5,4,3};
 //        
-//        Map<Integer, Long> occurrences =     Arrays.stream(arr).mapToObj(i->Integer.valueOf(i)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-//     
-//        for (Entry<Integer, Long> c : occurrences.entrySet()) {
-//        	System.out.println(c.getKey()+"---"+c.getValue());
-//        	
-//			
-//		}
+        Map<Integer, Long> occurrences =     Arrays.stream(arr2).mapToObj(i->Integer.valueOf(i)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+     
+        for (Entry<Integer, Long> c : occurrences.entrySet()) {
+        	System.out.println(c.getKey()+"---"+c.getValue());
+        	
+			
+	}
     	
     	String input = "occurrence";
 

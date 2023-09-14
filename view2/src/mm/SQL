@@ -24,3 +24,17 @@ WHERE salary = (
     LIMIT 1 OFFSET 8
 );
 
+
+SELECT e1.*
+FROM employees e1
+WHERE (e1.salary, e1.dept) IN (
+  SELECT MAX(salary), dept
+  FROM employees
+  GROUP BY dept
+);
+
+
+
+
+
+Hasheset Impelemntation
