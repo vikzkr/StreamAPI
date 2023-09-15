@@ -1,0 +1,55 @@
+public class ArrayQueue {
+    private int maxSize; // Maximum size of the queue
+    private int[] queueArray; // Array to store elements
+    private int front; // Index of the front element
+    private int rear; // Index of the rear element
+    private int currentSize; // Current number of elements in the queue
+
+    // Constructor to initialize the queue with a maximum size
+    public ArrayQueue(int size) {
+        maxSize = size;
+        queueArray = new int[maxSize];
+        front = 0;
+        rear = -1; // Initialize rear to -1 (empty queue)
+        currentSize = 0;
+    }
+
+    // Method to add an element to the rear of the queue
+    public void enqueue(int value) {
+        if (isFull()) {
+            System.out.println("Queue is full. Cannot enqueue " + value);
+        } else {
+            rear = (rear + 1) % maxSize; // Circular increment to handle wrap-around
+            queueArray[rear] = value;
+            currentSize++;
+        }
+    }
+
+    // Method to remove and return the front element of the queue
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return -1; // Return a sentinel value to indicate an empty queue
+        } else {
+            int removedValue = queueArray[front];
+            front = (front + 1) % maxSize; // Circular increment to handle wrap-around
+            currentSize--;
+            return removedValue;
+        }
+    }
+
+    // Method to check if the queue is empty
+    public boolean isEmpty() {
+        return currentSize == 0;
+    }
+
+    // Method to check if the queue is full
+    public boolean isFull() {
+        return currentSize == maxSize;
+    }
+
+    // Method to get the current number of elements in the queue
+    public int size() {
+        return currentSize;
+    }
+}
