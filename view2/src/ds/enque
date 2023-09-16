@@ -52,4 +52,13 @@ public class ArrayQueue {
     public int size() {
         return currentSize;
     }
+    
+    
+    121
+    
+    
+    number = 121%10 = 1
+     1+(100*1)
+     121/10
+    
 }

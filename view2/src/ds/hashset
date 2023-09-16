@@ -1,0 +1,56 @@
+public class IntegerHashSet {
+    private int[] array;
+    private int capacity;
+
+    public IntegerHashSet(int capacity) {
+        this.capacity = capacity;
+        array = new int[capacity];
+    }
+
+    public void add(int value) {
+        int index = value % capacity;
+        if (array[index] != value) {
+            array[index] = value;
+        }
+    }
+
+    public void remove(int value) {
+        int index = value % capacity;
+        if (array[index] == value) {
+            array[index] = 0;
+        }
+    }
+
+    public boolean contains(int value) {
+        int index = value % capacity;
+        return array[index] == value;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("{");
+        boolean first = true;
+        for (int value : array) {
+            if (value != 0) {
+                if (!first) {
+                    result.append(", ");
+                }
+                result.append(value);
+                first = false;
+            }
+        }
+        result.append("}");
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        IntegerHashSet hashSet = new IntegerHashSet(10);
+        hashSet.add(1);
+        hashSet.add(2);
+        hashSet.add(3);
+        System.out.println(hashSet);  // Output: {1, 2, 3}
+
+        hashSet.remove(2);
+        System.out.println(hashSet);  // Output: {1, 3}
+
+        System.out.println(hashSet.contains(
