@@ -18,7 +18,8 @@ public class setExample {
 	        boolean r = stringSet.stream().anyMatch(s->s.startsWith("A"));
 	        System.out.println(r);
 	        System.out.println("---------------");
-	        stringSet.stream().findFirst();
+	       Optional<String> s =  stringSet.stream().findAny();
+	       System.out.println(s.get());
 	       
 	}
 

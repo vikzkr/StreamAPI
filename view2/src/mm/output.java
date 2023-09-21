@@ -28,10 +28,6 @@ public class output {
         	System.out.print(array3[r]);
         }
         
-//        for (int element : array3) {
-//            System.out.print(element + " ");
-//           
-//        }
         
         
     }

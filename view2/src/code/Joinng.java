@@ -35,10 +35,10 @@ public class Joinng {
 		System.out.println("-------6-----");
 
 //		// importing
-		System.out.println(people.stream()
-				.collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(Person::getAge)),
-						person -> person.map(Person::getName).orElse(""))));
-		System.out.println(people.stream().collect(Collectors.minBy(Comparator.comparing(Person::getAge))));
+//		System.out.println(people.stream()
+//				.collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(Person::getAge)),
+//						person -> person.map(Person::getName).orElse(""))));
+//		System.out.println(people.stream().collect(Collectors.minBy(Comparator.comparing(Person::getAge))));
 
 //		// filtering
 		System.out.println("----7--------");

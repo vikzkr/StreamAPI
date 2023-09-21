@@ -1,5 +1,6 @@
 package mm;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -24,6 +25,10 @@ public class vowels {
 			}
 
 		}
+		
+		 String vowels = Arrays.stream(mainString.split(""))
+		            .filter(s -> "aeiou".contains(s))
+		            .collect(Collectors.joining(", "));
 
 	}
 }

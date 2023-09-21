@@ -26,6 +26,7 @@ public class SecondR {
 		char[] ch = string.toCharArray();
 
 		Arrays.sort(ch);
+		System.out.println(ch);
 		StringBuffer sb = new StringBuffer();
 		for (char c : ch) {
 			sb.append(c);

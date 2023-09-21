@@ -49,23 +49,26 @@ public class SortPersonsByAgeWithLambda {
 		people.add(new Person("Vikas", 5));
 
 		
-		Map <String, Integer> person = people.stream().collect(Collectors.toMap(i->i.getName(), j->j.getAge()));
-		Iterator<Map.Entry<String, Integer>> itr = person.entrySet().iterator();
-		while(itr.hasNext())
-		{
-			Map.Entry<String, Integer> data = itr.next();
-			System.out.println("[ "+data.getKey()+" -- "+data.getValue()+" ]");
+		
+		 Collections.sort(people,Comparator.comparing(Person::getName));
+			for (Person person : people) {
+			System.out.println(person);
 		}
+
+		
+//		Map <String, Integer> person = people.stream().collect(Collectors.toMap(i->i.getName(), j->j.getAge()));
+//		Iterator<Map.Entry<String, Integer>> itr = person.entrySet().iterator();
+//		while(itr.hasNext())
+//		{
+//			Map.Entry<String, Integer> data = itr.next();
+//			System.out.println("[ "+data.getKey()+" -- "+data.getValue()+" ]");
+//		}
 		//person.entrySet().stream().collect(Collectors.groupingBy((people) -> people.getKey()));
 //		Map <String, Integer> sorting = new LinkedHashMap<String, Integer>();
 //		for (Map.Entry<String, Integer> entry : person.entrySet()) {
 //			sorting.put(entry.getKey(), entry.getValue());
 //        }
-	//	System.out.println(sorting);
-		// Sorting
-		// Collections.sort(people,(i,j)->i.getAge()<j.getAge()?1:i.getAge()>j.getAge()?-1:0);
-		// Collections.sort(people);
-
+	
 		// Sort the list of people by age using a lambda expression
 		// Collections.sort(people, (person1, person2) ->
 		// Integer.compare(person1.getAge(), person2.getAge()));
