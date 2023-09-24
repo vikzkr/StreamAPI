@@ -9,7 +9,7 @@ public class vowels {
 
 	public static void main(String[] args) {
 
-		String mainString = "VIKAS";
+		String mainString = "abdc@nbd@ie";
 		Map<Boolean, List<Character>> result = mainString.chars().mapToObj(i -> (char) i)
 				.collect(Collectors.partitioningBy(i -> i == 'A' || i == '0' || i == 'E' || i == 'I' || i == 'U'));
 		System.out.println(result.get(true));
@@ -30,5 +30,7 @@ public class vowels {
 		            .filter(s -> "aeiou".contains(s))
 		            .collect(Collectors.joining(", "));
 
+		 
+		 System.out.println(vowels);
 	}
 }

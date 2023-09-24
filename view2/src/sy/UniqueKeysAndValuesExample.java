@@ -2,8 +2,10 @@ package sy;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class UniqueKeysAndValuesExample {
@@ -12,12 +14,12 @@ public class UniqueKeysAndValuesExample {
         Set<String> uniqueKeys = new HashSet<>();
 
         // Create a HashMap to store key-value pairs
-        Map<String, String> uniqueMap = new HashMap<>();
+        Map<String, String> uniqueMap = new ConcurrentHashMap<String, String>();
         
         uniqueMap.put(null, null);
         uniqueMap.put("20", "vikas");
         uniqueMap.put("", null);
-        
+        System.out.println(uniqueMap);
         CopyOnWriteArrayList<Integer> cpl = new CopyOnWriteArrayList<Integer>();
         cpl.add(1);
         cpl.addIfAbsent(1);

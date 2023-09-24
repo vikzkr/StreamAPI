@@ -1,7 +1,10 @@
 package mm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class output {
@@ -28,6 +31,14 @@ public class output {
         	System.out.print(array3[r]);
         }
         
+        
+        ArrayList<Integer> list =    IntStream.concat(Arrays.stream(array1), Arrays.stream(array2)).boxed().
+        		collect(Collectors.toCollection(ArrayList::new));
+            System.out.println(list);
+            
+            IntSummaryStatistics stats = list.stream()
+                    .mapToInt(Integer::intValue) // Convert Integer to int
+                    .summaryStatistics();
         
         
     }
